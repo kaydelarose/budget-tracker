@@ -36,7 +36,7 @@ Make sure you have the following installed:
    git clone https://github.com/your-username/budget-tracker.git
 2. **Navigate to the project directory**:
    ```bash
-   cd trivio-application
+   cd budget-tracker
 3. **Build the project**:
     ```bash
    mvn clean install
