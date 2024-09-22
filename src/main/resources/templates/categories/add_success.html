@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/head :: head"></head>
+
+
+<body>
+    <div th:replace="fragments/nav :: nav"></div>
+
+    <main class="d-flex flex-column align-items-center gap-5 mt-5">
+
+        <h1>Category <span class="fst-italic" th:text="${categories.categoryName}"></span>&nbsp; was added successfully.</h1>
+
+        <a href="/categories">Go to Categories Page</a>
+
+    </main>
+
+</body>
+
+</html>

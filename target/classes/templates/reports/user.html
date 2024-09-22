@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/head :: head"></head>
+
+<body>
+    <div th:replace="fragments/nav :: nav"></div>
+
+    <main class="d-flex flex-column align-items-center gap-3 mt-5">
+        <h1 class="fw-bold mb-5">Report By User</h1>
+
+        <form method="post" th:object="${user}" class="w-75 add-transaction-form">
+
+            <div class="mb-3 row">
+                <label th:for="*{userId}" class="col-sm-4 col-form-label">Choose User</label>
+                <div class="col-sm-8">
+                    <select class="form-select" th:field="*{userId}">
+                        <option th:value="0" th:disabled="disabled">--Select User--</option>
+                        <option th:each="user:${users}" th:value="${user.userId}" th:text="${user.userName}"></option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <input class="btn btn-primary mt-5" type="submit" value="Generate Report">
+            </div>
+        </form>
+
+    </main>
+</body>
+
+</html>Í

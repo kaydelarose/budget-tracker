@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="/img/budget-logo.png" alt="" width="60" height="60">
+            Budget Tracker
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Reports
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="/reports/category">By Category</a></li>
+                        <li><a class="dropdown-item" href="/reports/user">By User</a></li>
+                        <li><a class="dropdown-item" href="/reports/vendor">By Vendor</a></li>
+                        <li><a class="dropdown-item" href="/reports/year">By Year</a></li>
+                        <li><a class="dropdown-item" href="/reports/month">By Month</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/transactions}" class="nav-link">Transactions</a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/users}" class="nav-link">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/categories}" class="nav-link">Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/vendors}" class="nav-link">Vendors</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

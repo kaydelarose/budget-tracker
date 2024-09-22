@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+<body style="background-color: #ffffff; color: #221c24;">
+<nav th:replace="fragments/nav :: nav" class="mb-0"></nav>
+
+<!-- Full-Width Header Section with Image and Description -->
+<header class="d-flex align-items-center p-5 bg-light shadow-sm header-container">
+    <div class="header-text">
+        <h1 class="display-4 fw-bold text-uppercase">Budget Tracker</h1>
+        <p class="lead">Take control of your finances today.<br> Track your expenses, monitor spending,<br> and stay in control with Budget Tracker.</p>
+        <a href="/" class="btn btn-primary btn-lg mt-3">Learn More</a>
+    </div>
+    <div class="d-flex justify-content-end header-image-container">
+        <img src="/img/people.png" class="img-fluid rounded header-image" alt="Budget Tracker Logo">
+    </div>
+</header>
+
+<main class="p-4 d-flex flex-column align-items-center gap-3 mt-0 w-100">
+    <!-- Side by Side Content Section with Calculator Image -->
+    <div class="d-flex bg-light shadow-lg rounded p-5" style="width: 100%; max-width: 1200px;">
+        <!-- Text and Button Section (Left) -->
+        <div class="w-50 pe-3 d-flex flex-column justify-content-center">
+            <h2 id="header" class="display-4 fw-bold text-uppercase mb-3">Ready to get started?</h2>
+            <p class="lead text-muted mb-4">Log in to access your personal dashboard and manage your finances like a pro.</p>
+            <a href="/" class="btn btn-primary btn-lg">Log In</a>
+        </div>
+        <!-- Image Section (Right) -->
+        <div class="w-50 d-flex justify-content-center align-items-center">
+            <img src="/img/calc.png" class="img-fluid rounded" alt="Calculator" style="width: 80%; max-width: 400px;">
+        </div>
+    </div>
+
+    <!-- Sign Up Section -->
+    <section id="sign-up-today" class="text-center mt-5 p-5 bg-white text-dark" style="width: 100vw; margin-left: calc(50% - 50vw); box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);">
+        <h2 class="mb-4">Start Your Journey Today!</h2>
+        <a href="/" class="btn btn-primary btn-lg">Sign Up Now</a>
+    </section>
+
+</main>
+
+<footer class="footer bg-dark text-white p-4 mt-5 w-100">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="footer-left">
+            <p>&copy; 2024 Budget Tracker. All rights reserved.</p>
+        </div>
+        <div class="footer-right">
+            <a href="/privacy-policy" class="text-white me-3">Privacy Policy</a>
+            <a href="/terms-of-service" class="text-white">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+
+
+
+
+</body>
+</html>

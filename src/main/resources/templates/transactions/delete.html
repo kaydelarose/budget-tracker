@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/head :: head"></head>
+
+<body>
+    <div th:replace="fragments/nav :: nav"></div>
+
+    <main class="d-flex flex-column align-items-center gap-3 mt-5">
+        <h1 class="fw-bold mb-5">Delete Transaction</h1>
+
+        <h2>
+            <i class="fa fa-exclamation-circle text-danger p-3"></i>
+            You are about to delete the following transaction
+        </h2>
+
+        <table class="table w-auto">
+            <tbody>
+                <tr>
+                    <td width="50%" class="pe-5">Transaction Id</td>
+                    <td th:text="${transaction.transactionId}"></td>
+                </tr>
+                <tr>
+                    <td>User Name</td>
+                    <td th:text="${reportLine.userName}">
+                </tr>
+                <tr>
+                    <td>Category Name</td>
+                    <td th:text="${reportLine.categoryName}"></td>
+                </tr>
+                <tr>
+                    <td>Vendor Name</td>
+                    <td th:text="${reportLine.vendorName}"></td>
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td th:text="${transaction.date}"></td>
+                </tr>
+                <tr>
+                    <td>Amount</td>
+                    <td th:text="${#numbers.formatCurrency(transaction.amount)}"></td>
+                </tr>
+                <tr>
+                    <td>Notes</td>
+                    <td th:text="${transaction.notes}"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <form method="post" class="d-flex flex-row justify-content-center gap-5">
+            <a href="/transactions" class="btn btn-outline-secondary mt-5">Cancel</a>
+            <input class="btn btn-outline-danger mt-5" type="submit" value="Delete">
+        </form>
+
+    </main>
+</body>
+
+</html>Í
