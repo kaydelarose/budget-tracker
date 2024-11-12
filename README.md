@@ -1,7 +1,14 @@
 
-# Budget Tracker Application
+# Budget Tracker
 
-Budget Tracker is a web-based application designed to help users track their expenses and manage their budget efficiently. The application allows users to add transactions, users, vendors, and categories to better manage their financial data. Built using Java, Thymeleaf, Spring Boot, HTML/CSS, and MySQL, Budget Tracker provides a user-friendly interface for easy financial tracking and reporting.
+Budget Tracker is a web-based application designed to help users track their expenses and manage their budget efficiently. The application allows users to add transactions, users, vendors, and categories to better manage their financial data. Budget Tracker provides a user-friendly interface for easy financial tracking and reporting.
+
+## Tech Stack: 
+
+- **Backend:** Java, Spring Boot, MySQL
+- **Frontend:** Thymeleaf, HTML, CSS
+- **Database:** MySQL
+- **Tools:** Maven, MySQL Workbench
 
 ## Features
 
@@ -34,20 +41,21 @@ Make sure you have the following installed:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/kaydelarose/budget-tracker.git
+
 2. **Navigate to the project directory**:
    ```bash
    cd budget-tracker
-3. **Build the project**:
+   
+3. **Set Up the Database**:
+- Run the `create-budget.db.sql` file in your database management system to create the necessary database structure
+  
+4. **Build the project**:
     ```bash
    mvn clean install
-4. **Run the application**:
+    
+5. **Run the application**:
    ```bash
    mvn spring-boot:run
-
-## Future Enhancements
-
-- **Budget Notifications**: Add notifications to alert users when nearing or exceeding their budget.
-- **Multi-Currency Support**: Provide the ability to track expenses in multiple currencies with conversions.
 
 ## License
 
