@@ -2,6 +2,7 @@ package com.niantic.controllers;
 
 import com.niantic.models.Vendor;
 import com.niantic.services.VendorDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +14,13 @@ import java.util.ArrayList;
 
 @Controller
 public class VendorController {
-    VendorDao vendorDao = new VendorDao();
+
+    private final VendorDao vendorDao;
+
+    @Autowired
+    public VendorController(VendorDao vendorDao) {
+        this.vendorDao = vendorDao;
+    }
 
     @GetMapping("/vendors")
     public String getAllVendors(Model model) {
@@ -69,5 +76,4 @@ public class VendorController {
         vendorDao.deleteVendor(id);
         return "redirect:/vendors";
     }
-
 }

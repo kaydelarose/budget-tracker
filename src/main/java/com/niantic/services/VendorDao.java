@@ -1,28 +1,21 @@
 package com.niantic.services;
 
 import com.niantic.models.Vendor;
-import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
-import javax.sql.DataSource;
 import java.util.ArrayList;
 
 @Component
 public class VendorDao {
+
     private final JdbcTemplate jdbcTemplate;
 
     @Autowired
-    public VendorDao() {
-        BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setUrl("jdbc:mysql://localhost:3306/budget");
-        dataSource.setUsername("root");
-        dataSource.setPassword("P@ssw0rd");
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-
-        jdbcTemplate = new JdbcTemplate(dataSource);
+    public VendorDao(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     public ArrayList<Vendor> getAllVendors() {

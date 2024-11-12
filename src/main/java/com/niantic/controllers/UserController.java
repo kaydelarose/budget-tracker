@@ -1,6 +1,5 @@
 package com.niantic.controllers;
 
-import com.niantic.models.Category;
 import com.niantic.models.User;
 import com.niantic.services.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,15 +15,16 @@ import java.util.ArrayList;
 @Controller
 public class UserController {
 
-    UserDao userDao = new UserDao();
+    private final UserDao userDao;
+
+    @Autowired
+    public UserController(UserDao userDao) {
+        this.userDao = userDao;
+    }
 
     @GetMapping("/users")
     public String getUsers(Model model) {
-
-        ArrayList<User> users;
-
-        users = userDao.getAllUsers();
-
+        ArrayList<User> users = userDao.getAllUsers();
         model.addAttribute("users", users);
         return "users/index";
     }
@@ -37,9 +37,9 @@ public class UserController {
     }
 
     @PostMapping("/users/add")
-    public String addUser(Model model, @ModelAttribute("users") User user) {
+    public String addUser(Model model, @ModelAttribute("user") User user) {
         userDao.addUser(user);
-        model.addAttribute("users", user);
+        model.addAttribute("user", user);
         return "users/add_success";
     }
 
@@ -52,33 +52,26 @@ public class UserController {
     }
 
     @PostMapping("/users/{id}/edit")
-    public String editUser(Model model, @ModelAttribute("users") User user, @PathVariable int id) {
+    public String editUser(@ModelAttribute("user") User user, @PathVariable int id) {
         user.setUserId(id);
         userDao.updateUser(user);
         return "redirect:/users";
     }
 
     @GetMapping("/users/{id}/delete")
-    public String deleteUser(Model model, @PathVariable int id)
-    {
+    public String deleteUser(Model model, @PathVariable int id) {
         User user = userDao.getUserById(id);
-        if(user == null)
-        {
+        if (user == null) {
             model.addAttribute("message", String.format("There is no user with id %d", id));
             return "404";
         }
-
-        model.addAttribute("users", user);
+        model.addAttribute("user", user);
         return "users/delete";
     }
 
     @PostMapping("/users/{id}/delete")
-    public String deleteUser(@PathVariable int id)
-    {
+    public String deleteUser(@PathVariable int id) {
         userDao.deleteUser(id);
-
         return "redirect:/users";
     }
-
-
 }

@@ -8,7 +8,6 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class ReportLine {
-
     private String userName;
     private String categoryName;
     private String vendorName;
@@ -25,17 +24,20 @@ public class ReportLine {
         this.notes = notes;
     }
 
-    public ReportLine(Transaction transaction) {
-        userName = (new UserDao()).getUserById(transaction.getUserId()).getUserName();
-        categoryName = (new CategoryDao()).getCategoryById(transaction.getCategoryId()).getCategoryName();
-        vendorName = (new VendorDao()).getVendorById(transaction.getVendorId()).getVendorName();
-        date = transaction.getDate();
-        amount = transaction.getAmount();
-        notes = transaction.getNotes();
+    public ReportLine(Transaction transaction, UserDao userDao, CategoryDao categoryDao, VendorDao vendorDao) {
+        this.userName = userDao.getUserById(transaction.getUserId()).getUserName();
+        this.categoryName = categoryDao.getCategoryById(transaction.getCategoryId()).getCategoryName();
+        this.vendorName = vendorDao.getVendorById(transaction.getVendorId()).getVendorName();
+        this.date = transaction.getDate();
+        this.amount = transaction.getAmount();
+        this.notes = transaction.getNotes();
     }
 
     public ReportLine() {
 
+    }
+
+    public ReportLine(Transaction transaction) {
     }
 
     public String getUserName() {

@@ -5,6 +5,7 @@ import com.niantic.services.CategoryDao;
 import com.niantic.services.TransactionDao;
 import com.niantic.services.UserDao;
 import com.niantic.services.VendorDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,22 +15,25 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
 
-
 @Controller
 public class TransactionsController {
-    TransactionDao transactionDao = new TransactionDao();
-    CategoryDao categoryDao = new CategoryDao();
-    UserDao userDao = new UserDao();
-    VendorDao vendorDao = new VendorDao();
 
+    private final TransactionDao transactionDao;
+    private final CategoryDao categoryDao;
+    private final UserDao userDao;
+    private final VendorDao vendorDao;
+
+    @Autowired
+    public TransactionsController(TransactionDao transactionDao, CategoryDao categoryDao, UserDao userDao, VendorDao vendorDao) {
+        this.transactionDao = transactionDao;
+        this.categoryDao = categoryDao;
+        this.userDao = userDao;
+        this.vendorDao = vendorDao;
+    }
 
     @GetMapping("/transactions")
     public String getTransactions(Model model) {
-
-        ArrayList<Transaction> transactions;
-
-        transactions = transactionDao.getAllTransactions();
-
+        ArrayList<Transaction> transactions = transactionDao.getAllTransactions();
         model.addAttribute("transactions", transactions);
         return "transactions/index";
     }
@@ -86,7 +90,7 @@ public class TransactionsController {
     @GetMapping("/transactions/{id}/delete")
     public String deleteTransaction(Model model, @PathVariable int id) {
         Transaction transaction = transactionDao.getTransactionById(id);
-        ReportLine reportLine = new ReportLine(transaction);
+        ReportLine reportLine = new ReportLine(transaction, userDao, categoryDao, vendorDao);
 
         model.addAttribute("transaction", transaction);
         model.addAttribute("reportLine", reportLine);
@@ -99,6 +103,4 @@ public class TransactionsController {
         transactionDao.deleteTransaction(id);
         return "redirect:/transactions";
     }
-
 }
-
