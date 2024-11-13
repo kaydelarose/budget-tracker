@@ -1,20 +1,13 @@
 package com.niantic.controllers;
 
 import com.niantic.models.*;
-import com.niantic.services.CategoryDao;
-import com.niantic.services.TransactionDao;
-import com.niantic.services.UserDao;
-import com.niantic.services.VendorDao;
+import com.niantic.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
-import java.time.Year;
-import java.util.ArrayList;
+import java.util.*;
 
 @Controller
 public class ReportsController {

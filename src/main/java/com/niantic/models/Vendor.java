@@ -5,8 +5,7 @@ public class Vendor {
     private String vendorName;
     private String website;
 
-    public Vendor() {
-    }
+    public Vendor() {}
 
     public Vendor(int vendorId, String name, String website) {
         this.vendorId = vendorId;

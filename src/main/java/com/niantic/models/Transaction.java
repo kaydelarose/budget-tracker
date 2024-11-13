@@ -15,8 +15,7 @@ public class Transaction {
     private BigDecimal amount;
     private String notes;
 
-    public Transaction() {
-    }
+    public Transaction() {}
 
     public Transaction(int transactionId, int userId, int categoryId, int vendorId, LocalDate date, BigDecimal amount, String notes) {
         this.transactionId = transactionId;
@@ -83,9 +82,4 @@ public class Transaction {
     public void setNotes(String notes) {
         this.notes = notes;
     }
-
-//    @Override
-//    public String toString() {
-//        return String.format("%-10s %15s        %s", date.toString(), amount, notes);
-//    }
 }

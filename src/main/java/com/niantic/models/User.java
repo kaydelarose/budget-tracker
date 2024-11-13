@@ -21,9 +21,7 @@ public class User {
 
     }
 
-    public User() {
-
-    }
+    public User() {}
 
     public int getUserId() {
         return userId;
@@ -72,10 +70,5 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-
-//    public String toString() {
-//        return String.format("%2d: %s, %s %s, %s, %s\n", userId, userName, firstName, lastName, phone, email);
-//    }
-
 
 }

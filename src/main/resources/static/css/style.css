@@ -10,7 +10,6 @@ body, .navbar {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Highlight for Reports Dropdown Menu */
 .navbar-nav .nav-item.dropdown .nav-link {
     padding: 8px 15px;
     border-radius: 25px;
@@ -42,14 +41,10 @@ body, .navbar {
     max-width: 800px;
 }
 
-/* index.html Styling */
-
 h1 {
     font-family: "Playfair Display", serif;
     font-size: 3rem;
 }
-
-/* Home-Page Styling index.html */
 
 .header-container {
     width: 100%;
@@ -71,10 +66,9 @@ h1 {
 
 .header-image {
     width: 100%;
-    max-width: 850px; /* Control the maximum width of the image */
+    max-width: 850px;
     height: auto;
 }
-
 
 #sign-up-today {
     margin-top: 20px;
@@ -94,7 +88,6 @@ h1 {
     padding: 10px 20px; 
 }
 
-/* Footer Styling */
 .footer {
     background-color: #343a40;
     color: #ffffff;
@@ -103,7 +96,7 @@ h1 {
     position: relative;
     bottom: 0;
     width: 100%;
-    margin-top: 0; /* Ensure no extra margin above the footer */
+    margin-top: 0;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -126,11 +119,6 @@ h1 {
     color: #adb5bd;
 }
 
-
-
-
-
-/* Main Content Area for Admin Pages */
 .admin-page {
     max-width: 1200px;
     margin: 0 auto;
@@ -139,7 +127,6 @@ h1 {
     border-radius: 8px;
 }
 
-/* Specific Styling for Tables on Admin Pages */
 .admin-page .table-responsive {
     width: 100%;
     overflow-x: auto;
@@ -167,7 +154,6 @@ h1 {
     background-color: #f9f9f9;
 }
 
-/* Button Styles on Admin Pages */
 .admin-page .btn {
     padding: 10px 20px;
     border-radius: 5px;
@@ -177,7 +163,6 @@ h1 {
     transition: background-color 0.3s ease;
 }
 
-/* Edit and Delete Button Styles on Admin Pages */
 .admin-page .btn-edit,
 .admin-page .btn-delete {
     padding: 6px 12px;
@@ -190,7 +175,6 @@ h1 {
     align-items: center;
 }
 
-/* Edit Button */
 .admin-page .btn-edit {
     background-color: #007bff;
     color: #ffffff;
@@ -203,7 +187,6 @@ h1 {
     border-color: #0056b3;
 }
 
-/* Delete Button */
 .admin-page .btn-delete {
     background-color: #dc3545;
     color: #ffffff;
@@ -216,7 +199,6 @@ h1 {
     border-color: #c82333;
 }
 
-/* Icons inside buttons */
 .admin-page .btn-edit i,
 .admin-page .btn-delete i {
     margin-right: 2px;

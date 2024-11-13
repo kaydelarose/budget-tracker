@@ -1,8 +1,6 @@
 package com.niantic.models;
 
-import com.niantic.services.CategoryDao;
-import com.niantic.services.UserDao;
-import com.niantic.services.VendorDao;
+import com.niantic.services.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

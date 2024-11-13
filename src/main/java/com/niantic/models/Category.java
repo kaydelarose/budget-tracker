@@ -6,9 +6,7 @@ public class Category {
     private String categoryName;
     private String description;
 
-    public Category(){
-
-    }
+    public Category(){}
 
     public Category(int categoryId, String categoryName, String description) {
         this.description = description;
@@ -39,11 +37,6 @@ public class Category {
     public void setDescription(String description) {
         this.description = description;
     }
-
-//    public String toString() {
-//        return String.format("%2d: Category Name - %s, Description - %s\n", categoryId, categoryName, description);
-//    }
-
 
 }
 
